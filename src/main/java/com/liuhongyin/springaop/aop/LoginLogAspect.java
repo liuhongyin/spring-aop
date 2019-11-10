@@ -22,6 +22,11 @@ public class LoginLogAspect {
     @Autowired
     private HttpServletRequest request;
 
+    /**
+     * @ Pointcut这个注解主要用来定义切入点，通过表达式的方式，来告诉Spring,我这个切点要切到什么位置，常用的就是execution去匹配连接点。
+     * @ 语法：execution( [方法修饰符(可选)]__返回类型__类路径__方法名__(参数)__[异常模式(可选)] )
+     * @ *就是通配符，（..）代表任意多个参数
+     */
     @Pointcut("execution(public * com.liuhongyin.springaop.controller.*Controller.*(..))")
     public void loginLog() {
     }
